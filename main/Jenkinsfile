@@ -13,7 +13,7 @@ pipeline {
         }
         stage('Deploy') {
             steps {
-                sh 'make -C main deploy'
+                sh 'make deploy'
             }
         }
     }
