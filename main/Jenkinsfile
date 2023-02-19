@@ -3,23 +3,23 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                sh 'make -c main'
+                sh 'make -C main'
             }
         }
         stage('Test') {
             steps {
-                sh 'make -c main test'
+                sh 'make -C main test'
             }
         }
         stage('Deploy') {
             steps {
-                sh 'make -c main deploy'
+                sh 'make -C main deploy'
             }
         }
     }
     post {
         always {
-            sh 'make -c main clean'
+            sh 'make -C main clean'
         }
         failure {
             echo 'pipeline failed'
